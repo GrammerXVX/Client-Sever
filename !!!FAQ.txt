@@ -3,9 +3,11 @@
 1)Server(MinAPI) из каталога /ProjTask/bin/Debug/net6.0/MinAPI.exe или Компляция MinAPI в решении ProjTask.sln
 2)Client запуск /Client/bin/Debug/net7.0-windows/Client.exe в случае отсутвия WPF или чего другого есть перейти в bin/Release и установить Setup.exe
 3)В случае отсутсвия библиотек запустить sln и проверить nuget пакеты.
+4)В appsettings.json находиться строка подключения к базе данных.
 
 IMPORTANT!
 The sequence of launching 
 1)Server(MinAPI) from /ProjTask/bin/Debug/net6.0/MinAPI.exe or MinAPI Compilation in ProjTask.sln
 2)Client running /Client/bin/Debug/net7.0-windows/Client.exe in case there is no WPF or something else, go to bin/Release and install Setup.exe
 3)In case of missing libraries run sln and check nuget packages.
+4)In appsettings.json there is a line to connect to the database.
