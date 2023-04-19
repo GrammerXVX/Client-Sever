@@ -1,0 +1,40 @@
+﻿<Window x:Class="Client.View.AddWindow.AddHotel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client.View.AddWindow"
+        xmlns:vm="clr-namespace:Client.ViewModel.GeneralWindow"
+        mc:Ignorable="d"
+        Title="AddHotel" Height="480" Width="400" ResizeMode="NoResize">
+    <Window.DataContext>
+        <vm:AddHotelVM/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="285" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="75" />
+            <ColumnDefinition Width="325" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content="Hotel Name" />
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding HotelName}" />
+        <Label Grid.Row="1" Grid.Column="0" Content="Phone" />
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Phone}" />
+        <Label Grid.Row="2" Grid.Column="0" Content="Address" />
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Address}" />
+        <Label Grid.Row="3" Grid.Column="0" Content="Rating" />
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Rating}" />
+        <Label Grid.Row="4" Grid.Column="0" Content="Picture" />
+        <Button Grid.Row="4" Grid.Column="1" Content="Choose Picture" Command="{Binding  SelectImageCommand}"/>
+        <Button Grid.Row="5" Grid.Column="1" Content="Add" Command="{Binding AddCommand}"/>
+        <Image Source="{Binding Picture}" Grid.Column="1" Grid.Row="6" Height="265" Width="265"></Image>
+    </Grid>
+</Window>

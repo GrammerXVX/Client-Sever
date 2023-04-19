@@ -1,0 +1,36 @@
+﻿<Window x:Class="Client.View.Dialog.SaveFile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client.View.Dialog"
+        xmlns:vm="clr-namespace:Client.ViewModel.DialogViewModel"
+        mc:Ignorable="d"
+        Title="Save File" Height="115" Width="315" ResizeMode="NoResize">
+    <Window.DataContext>
+        <vm:SaveFileVM/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="65" />
+            <ColumnDefinition  Width="235"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="File Type:" />
+        <ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding FileTypes}" 
+                  SelectedItem="{Binding File.FileType}" />
+
+        <Label Grid.Row="1" Grid.Column="0" Content="File Name:" />
+        <TextBox MaxLength="30" Grid.Row="1" Grid.Column="1" Text="{Binding File.FileName}" />
+
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Save" Command="{Binding SaveCommand}" CommandParameter="{Binding}" Margin="5" />
+            <Button Content="Cancel" Command="{Binding CancelCommand}" Margin="5" />
+        </StackPanel>
+    </Grid>
+</Window>

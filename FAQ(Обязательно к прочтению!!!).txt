@@ -1,0 +1,5 @@
+ВАЖНО!
+Последовательность запуска 
+1)Server(MinAPI) из каталога /ProjTask/bin/Debug/net6.0/MinAPI.exe или Компляция MinAPI в решении ProjTask.sln
+2)Client запуск /Client/bin/Debug/net7.0-windows/Client.exe в случае отсутвия WPF или чего другого есть перейти в bin/Release и установить Setup.exe
+3)В случае отсутсвия библиотек запустить sln и проверить nuget пакеты.

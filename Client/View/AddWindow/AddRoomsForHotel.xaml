@@ -1,0 +1,44 @@
+﻿<Window x:Class="Client.View.AddWindow.AddRoomsForHotel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client.View.AddWindow"
+        xmlns:vm="clr-namespace:Client.ViewModel.GeneralWindow"
+        mc:Ignorable="d"
+        Title="AddRoomsForHotel" Height="320" Width="235" ResizeMode="NoResize">
+    <Window.DataContext>
+        <vm:AddRoomVM/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="27"/>
+            <RowDefinition Height="27"/>
+            <RowDefinition Height="27"/>
+            <RowDefinition  Height="170"/>
+            <RowDefinition Height="30"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="72"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content="Room Type:"/>
+        <ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding RoomTypes}" SelectedItem="{Binding SelectedRoomType}"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="Price:"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Price}"/>
+        <Button Margin="0,1,0,1" Grid.Row="2" Grid.ColumnSpan="2" Content="Add Room" Command="{Binding AddRoomCommand}"/>
+        <DataGrid  Grid.Row="3" Grid.ColumnSpan="2" Margin="0,1,0,1"  ItemsSource="{Binding TempRooms}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Room Type" Binding="{Binding RoomType}"/>
+                <DataGridTextColumn Header="Number" Binding="{Binding Number}"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding Price}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="4" Margin="0,4,0,0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" Width="115">
+            <Button VerticalAlignment="Bottom" Content="Clear" Margin="3" Command="{Binding CancelCommand}" Height="20"/>
+            <Button VerticalAlignment="Bottom" Content="Save" Margin="3" Command="{Binding SaveCommand}" Height="20" Width="30"/>
+            <Button VerticalAlignment="Bottom" Content="Close" Margin="3" Command="{Binding CloseCommand}" Height="20" Width="33"/>
+        </StackPanel>
+    </Grid>
+</Window>
