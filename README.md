@@ -14,5 +14,3 @@ HTTP Sockets,
 LINQ.
 
 All the given code does not make any deep sense, but only shows the connection between the Client (WPF Application) and the Server (MinAPI) and is strictly of an educational nature.
-
-Translated with www.DeepL.com/Translator (free version)
